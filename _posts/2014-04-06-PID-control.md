@@ -3,7 +3,7 @@ layout: post
 title: PID Control
 ---
 
-A common technique in robotic controls in called PID (proportional-integral-derivative). This is a feedback mechanism designed to cause an output to converge upon an input. For example, in order to go 3 m/s we would sample the current speed of the car and take the difference of that and 3 m/s and if that is > 0 we decelerate or if it is < 0 we accelerate. This cycle repeats until convergence. 
+A common technique in robotic controls is called PID (proportional-integral-derivative). This is a feedback mechanism designed to cause an output to converge upon an input. For example, in order to go 3 m/s we would sample the current speed of the car and take the difference of that and 3 m/s and if that is > 0 we decelerate or if it is < 0 we accelerate. This cycle repeats until convergence. 
 
 ![diagram](https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/PID_en_updated_feedback.svg/500px-PID_en_updated_feedback.svg.png)
 In the diagram above (from wikipedia) u is the output to the system and e is the difference between expected and actual. As the system compensates for the error (diff of actual and expected) it compensates by increasing or decreasing the output. With this system, rather than having implementation details about output machine, you simply increase/decrease output based on inputs. Kp Ki Kd, are weight coefficients for the inputs and must be adjusted w/ experimentation to achieve the response you want. A visual example of the system response is below:
